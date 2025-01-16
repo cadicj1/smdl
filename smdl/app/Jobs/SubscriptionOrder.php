@@ -36,14 +36,14 @@ class SubscriptionOrder implements ShouldQueue
 
             Log::info('Processing subscription for order', ['order_id' => $this->order->id]);
 
-            $response = Http::post('https://run.mocky.io/v3/30dd1995-414e-4c6e-b41d-56a00c988b13', [
+            $response = Http::post('https://smile.free.beeceptor.com/orders', [
                 'ProductName' => $this->basketItem->name,
                 'Price' => (float) $this->basketItem->price,
                 'Timestamp' => now()->format('Y-m-d H:i:s')
             ]);
 
             if ($response->successful()) {
-                Log::info('Order Item Completed');
+                Log::info('Order Item Completed',[$response->body()]);
             } else {
                 Log::error('Subscription processing failed', [
                     'order_id' => $this->order->id,
