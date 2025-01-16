@@ -14,7 +14,7 @@ Smindle assignment
 
 6) Run command ``./vendor/bin/sail artisan key:generate `` for Project Key
 
-7) Run command ``./vendor/bin/sail artisan migrate`` for database migrations queue
+7) Run command ``./vendor/bin/sail artisan migrate`` for database migrations 
 
 8)Run command ``./vendor/bin/sail artisan queue:work`` for Job queue
 
